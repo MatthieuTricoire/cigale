@@ -1,0 +1,33 @@
+
+---
+import '../styles/global.css'
+import NavbarBis from './navbarBis.astro'
+
+interface Props {
+  title?: string
+  description?: string
+}
+
+
+---
+
+<!DOCTYPE html>
+<html lang="fr" style="scrollbar-gutter: stable">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body class="bg-surface flex flex-col min-h-screen">
+    <NavbarBis />
+    <main class="pt-16 flex-1">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <slot />
+      </div>
+    </main>
+    <footer class="bg-gray-900 text-white py-12">
+      footer
+    </footer>
+  </body>
+</html>

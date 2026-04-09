@@ -1,0 +1,104 @@
+---
+const services = [
+  {
+    title: "Préparation Retraite",
+    description: "Construire un complément de revenu fiable pour vivre sans dépendre des aléas du système.",
+    // Code SVG de l'icône TreePine
+    iconPaths: `<path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.8 1.7H17Z" /><path d="M12 22v-3" />`
+  },
+  {
+    title: "Réduire ses impôts",
+    description: "Optimiser sa fiscalité légalement, avec des stratégies adaptées à votre profil.",
+    // Code SVG de l'icône TrendingUp
+    iconPaths: `<polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" />`
+  },
+  {
+    title: "Financer les études",
+    description: "Anticiper les dépenses pour offrir à vos enfants toutes les chances de réussir.",
+    // Code SVG de l'icône Users
+    iconPaths: `<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />`
+  },
+  {
+    title: "Valoriser son épargne",
+    description: "Faire fructifier vos économies avec un couple rendement / risque bien calibré.",
+    // Code SVG de l'icône Wallet
+    iconPaths: `<path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a8 8 0 0 1-5-1.52" /><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />`
+  },
+  {
+    title: "Protéger sa famille",
+    description: "Sécuriser l'avenir de vos proches face aux imprévus de la vie.",
+    // Code SVG de l'icône Wallet
+    iconPaths: `<path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a8 8 0 0 1-5-1.52" /><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />`
+  },
+  {
+    title: "Investir dans l'immobilier",
+    description: "Construire un patrimoine solide avec les bonnes stratégies d'acquisition.",
+    // Code SVG de l'icône Wallet
+    iconPaths: `<path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a8 8 0 0 1-5-1.52" /><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />`
+  }
+,
+  {
+    title: "Financer un grand projet",
+    description: "Planifier sereinement un voyage, un résidence secondaire ou un projet personnel.",
+    // Code SVG de l'icône Wallet
+    iconPaths: `<path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a8 8 0 0 1-5-1.52" /><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />`
+  },
+  {
+    title: "Transmettre son patrimoine",
+    description: "Organiser la transmission de vos biens dans les meilleures conditions fiscales.",
+    // Code SVG de l'icône Wallet
+    iconPaths: `<path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a8 8 0 0 1-5-1.52" /><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" />`
+  }
+];
+---
+
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="font-serif text-4xl text-sage mb-4">Répondre à vos objectifs de vie</h2>
+      <p class="text-sage/60 max-w-2xl mx-auto">Comme dans la construction d'une maison, la gestion de son patrimoine se construit en commençant par définir le plan, selon son projet et sa situation.
+Chaque situation étant unique, je pars toujours de vos projets de vie, et non des solutions.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {services.map((service) => (
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-sage/5 hover:border-primary/30 transition-all hover:-translate-y-2 group">
+          
+          <div class="w-14 h-14 bg-beige rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="2" 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              class="text-gold group-hover:text-white w-7 h-7"
+              set:html={service.iconPaths}
+            />
+          </div>
+          
+          <h3 class="font-serif text-xl text-sage mb-3">{service.title}</h3>
+          <p class="text-sage/70 text-sm leading-relaxed mb-6">{service.description}</p>
+          
+          <a href="#" class="text-primary font-bold text-sm flex items-center">
+            En savoir plus 
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              stroke-width="2" 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              class="w-4 h-4 ml-1"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </a>
+          
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
