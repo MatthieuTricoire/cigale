@@ -1,5 +1,5 @@
 ---
-// empty
+import { X } from "@lucide/astro"
 ---
 
 <section id="about" class="py-24 scroll-mt-20">
@@ -31,8 +31,94 @@
           <span class="font-serif text-2xl italic text-sage">Cédric Gal, CGP®</span>
         </div>
         
+        <button type="button" onclick="document.getElementById('modal-habilitations').showModal()" class="inline-flex items-center justify-center bg-white border border-sage/20 text-sage font-bold py-3 px-8 rounded-lg hover:border-primary/50 hover:text-primary transition-all shadow-sm">
+          Mes habilitations
+        </button>
+        
       </div>
       
     </div>
   </div>
 </section>
+
+<dialog id="modal-habilitations" class="modal-dialog" onclick="if (event.target === this) this.close()">
+  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden">
+    <div class="bg-sage p-6 flex justify-between items-center">
+      <h3 class="font-serif text-2xl text-white">Mes habilitations réglementaires</h3>
+      <button type="button" onclick="document.getElementById('modal-habilitations').close()" class="text-white/70 hover:text-white transition-colors p-2">
+        <X class="w-6 h-6" />
+      </button>
+    </div>
+    
+    <div class="p-8 overflow-y-auto max-h-[calc(90vh-100px)]">
+      <div class="mb-8">
+        <p class="text-sage/80 text-lg mb-4">L'exercice de la profession de Conseiller en Gestion de Patrimoine est strictement encadré. Voici les statuts réglementés sous lesquels j'exerce :</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        
+        <!-- Card 1 -->
+        <div class="bg-beige/50 p-6 rounded-xl border border-sage/10 hover:border-primary/30 transition-colors">
+          <h4 class="font-serif text-lg text-sage mb-2">Conseiller en Investissements Financiers (CIF)</h4>
+          <p class="text-sage/70 text-sm leading-relaxed mb-4">
+            Inscrit à l'ORIAS, membre d'une association agréée par l'Autorité des Marchés Financiers (AMF). Cette habilitation me permet de vous conseiller sur les produits financiers (titres, OPCVM, etc.).
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-beige/50 p-6 rounded-xl border border-sage/10 hover:border-primary/30 transition-colors">
+          <h4 class="font-serif text-lg text-sage mb-2">Courtier en Assurance (IAS)</h4>
+          <p class="text-sage/70 text-sm leading-relaxed mb-4">
+            Inscrit à l'ORIAS en tant que courtier en assurance. Ce statut m'autorise à vous proposer et vous conseiller sur des contrats d'assurance-vie, de prévoyance ou de retraite sous le contrôle de l'ACPR.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-beige/50 p-6 rounded-xl border border-sage/10 hover:border-primary/30 transition-colors">
+          <h4 class="font-serif text-lg text-sage mb-2">Intermédiaire en Opérations de Banque (IOBSP)</h4>
+          <p class="text-sage/70 text-sm leading-relaxed mb-4">
+            Inscrit à l'ORIAS. Ce statut permet de vous accompagner dans la recherche de financements (crédits immobiliers, rachats de crédits, etc.) auprès de nos partenaires bancaires.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-4 items-center justify-center p-4 bg-sage/5 rounded-xl border border-sage/10 text-center">
+        <p class="text-primary font-medium">Immatriculation ORIAS n° 25 004 273</p>
+        <span class="hidden md:inline text-sage/30">•</span>
+        <p class="text-primary font-medium">Numéro SIREN : 934 972 860 R.S.A.C Pau</p>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<style>
+  dialog {
+    padding: 0;
+    border: none;
+    background: transparent;
+    width: 100%;
+    max-width: 64rem;
+    margin: auto;
+  }
+  
+  dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.2s ease;
+  }
+  
+  dialog[open] {
+    animation: slideIn 0.2s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+</style>

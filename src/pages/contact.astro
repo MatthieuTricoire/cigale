@@ -2,6 +2,49 @@
 import BaseLayout from '../components/BaseLayout.astro'
 ---
 
-<BaseLayout title="Contact">
-  <h1>Contact</h1>
+<BaseLayout title="Prendre rendez-vous">
+  <section class="py-24 scroll-mt-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="font-serif text-4xl text-sage mb-4">Prendre rendez-vous</h1>
+      </div>
+      
+      <div class="bg-sage/5 rounded-2xl p-8 mb-8 border border-sage/10">
+        <p class="text-sage/80 mb-4">Ce premier entretien est une étape essentielle pour faire connaissance et comprendre vos objectifs de vie. Ce rendez-vous est gratuit, strictement confidentiel et sans engagement.</p>
+        <p class="text-sage/80 mb-4 font-medium">Au cours de cet échange d'environ 30 minutes, nous aborderons :</p>
+        <ul class="text-sage/70 space-y-2 mb-4">
+          <li class="flex items-start gap-2">
+            <span class="text-primary mt-1">•</span>
+            <span><strong>Votre situation actuelle :</strong> Un tour d'horizon global de votre profil personnel, professionnel et financier.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary mt-1">•</span>
+            <span><strong>Vos projets de vie :</strong> Préparation à la retraite, optimisation de votre fiscalité, constitution d'un capital, transmission, protection de vos proches, etc.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-primary mt-1">•</span>
+            <span><strong>Notre approche :</strong> Une présentation de ma méthode de travail et de la manière dont je peux vous accompagner sur le long terme.</span>
+          </li>
+        </ul>
+        <p class="text-sage/60 text-sm italic">Note : Aucun document spécifique n'est requis pour ce premier échange, venez simplement avec vos questions et vos projets !</p>
+      </div>
+              <p class="text-sage/70 max-w-2xl mx-auto p-8">Choisissez un créneau qui vous convient pour échanger sur votre projet patrimonial.</p>
+
+      <div class="bg-white rounded-2xl shadow-lg p-2 sm:p-4 relative">
+        <!-- Message de fallback (Axeptio) -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-8 bg-white z-0 rounded-2xl">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-sage/40 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+          <p class="text-sage/70 font-medium mb-2">L'agenda Calendly nécessite votre consentement</p>
+          <p class="text-sage/50 text-sm">Veuillez accepter les cookies via le gestionnaire en bas à gauche de votre écran pour afficher le module de prise de rendez-vous.</p>
+        </div>
+        
+        <!-- Le widget Calendly apparaîtra par-dessus s'il est autorisé -->
+        <div class="calendly-inline-widget relative z-10" data-url="https://calendly.com/matthieutricoire/first-meeting?hide_landing_page_details=1&hide_gdpr_banner=1&primary_color=6b8e6b" style="min-width:100%;height:700px;"></div>
+      </div>
+    </div>
+  </section>
+  
+  <script type="text/plain" data-vendor="calendly" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </BaseLayout>
