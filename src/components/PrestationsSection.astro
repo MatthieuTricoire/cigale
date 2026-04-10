@@ -81,7 +81,7 @@ Finance, immobilier, transmission : bénéficie' d'une stratégie globale et d'u
       {categories.map((category) => {
         const Icon = category.Icon;
         return (
-          <button type="button" onclick={`document.getElementById('modal-${category.id}').showModal()`} class="bg-white p-8 rounded-xl shadow-sm border border-sage/5 hover:border-primary/30 transition-all hover:-translate-y-2 group text-left w-full">
+          <button type="button" onclick={`document.getElementById('modal-${category.id}').showModal()`} class="bg-white p-8 rounded-xl shadow-sm border border-sage/5 hover:cursor-pointer hover:border-primary/30 transition-all hover:-translate-y-2 group text-left w-full">
             <div class="w-14 h-14 bg-beige rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
               <Icon class="w-7 h-7 text-gold group-hover:text-white" />
             </div>
