@@ -21,20 +21,20 @@ import { Menu } from '@lucide/astro';
       </div>
       
       <div class="hidden md:flex items-center space-x-8">
-        <a href="#services" class="nav-link text-sage hover:text-primary transition-colors font-medium" data-section="services">Nos Services</a>
+        <a href="#services" class="nav-link text-sage hover:text-primary transition-colors font-medium" data-section="services">Services</a>
         <a href="#methodology" class="nav-link text-sage hover:text-primary transition-colors font-medium" data-section="methodology">Méthodologie</a>
+        <a href="#prestations" class="nav-link text-sage hover:text-primary transition-colors font-medium" data-section="prestations">Stratégies</a>
         <a href="#about" class="nav-link text-sage hover:text-primary transition-colors font-medium" data-section="about">À Propos</a>
-        <a href="#analyses" class="nav-link text-sage hover:text-primary transition-colors font-medium" data-section="analyses">Analyses</a>
         <button class="bg-primary hover:bg-primary/90 text-background-dark font-bold py-2.5 px-6 rounded-lg transition-all shadow-lg shadow-primary/20 cursor-pointer">
           Prendre rendez-vous
         </button>
       </div>
       <script>
         const navLinks = document.querySelectorAll('.nav-link');
-        const sections = ['services', 'methodology', 'about'];
+        const sections = ['services', 'prestations', 'methodology', 'about'];
         
         function updateActiveNav() {
-          const scrollPos = window.scrollY + 150;
+          const scrollPos = window.scrollY + 100;
           
           for (const sectionId of sections) {
             const section = document.getElementById(sectionId);
