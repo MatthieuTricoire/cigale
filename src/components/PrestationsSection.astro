@@ -1,71 +1,113 @@
 ---
-import { Home, TrendingUp, Wallet, Landmark, X } from "@lucide/astro"
+import { Home, TrendingUp, Wallet, Landmark, X, Heart, Receipt } from "@lucide/astro"
 
 const categories = [
-  {
-    id: "immobilier",
-    title: "Investissements immobiliers",
-    Icon: Home,
-    items: ["LMNP / LMP","Nu propriété", "LLI", "Colocation", "Malraux / Monument Historique"],
-    content: {
-      subtitle: "Investissez dans la pierre pour créer des revenus complémentaires durables :",
-      points: [
-        "LMNP / LMP : Loueur meublé non professionnel ou professionnel pour bénéficier de revenus locatifs fiscalisés",
-        "Pinel / Denormandie : Défiscalisationrté dans le neuf avec réduction d'impôt avantageuse",
-        "SCPI / OPCI : Investissement clé en main sans gestion locative, avec revenus réguliers",
-        "Malraux / Monument Historique : Défiscalisation sur la restauration de bâtiments anciens",
-      ],
-      cta: "Démarrer un projet immobilier"
-    }
-  },
-  {
-    id: "instruments",
-    title: "Instruments financiers",
-    Icon: TrendingUp,
-    items: ["Private Equity", "Produits Structurés", "Girardin Industriel", "FIP / FCPI"],
-    content: {
-      subtitle: "Accédez à des solutions de diversification pour optimiser votre patrimoine",
-      points: [
-        "Private Equity : Investissement dans des entreprises non cotées à fort potentiel de croissance",
-        "Produits Structurés : Solutions personnalisées combinant rendements et protection du capital",
-        "Girardin Industriel : Investissement dans les DOM-TOM avec avantage fiscal significatif",
-        "FIP / FCPI : Fonds dédiés aux PME innovantes avec réduction d'impôt sur le revenu",
-      ],
-      cta: "Explorer les opportunités financières"
-    }
-  },
   {
     id: "placements",
     title: "Placements financiers",
     Icon: Wallet,
-    items: ["Assurance-vie", "PER (Plan Épargne Retraite)", "Contrat de Capitalisation" ],
+    items: [
+      "Épargne financière",
+      "Épargne immobilière",
+      "Épargne retraite",
+      "Épargne salariale",
+      "Diversification",
+      "Solutions fiscales"
+    ],
     content: {
-      subtitle: "Optimisez vos placements avec une stratégie adaptée à vos objectifs",
+      subtitle: "Optimisez votre épargne avec des solutions adaptées à vos objectifs :",
       points: [
-        "Assurance-vie : Supports variés, transmission du capital, flexibilité des rachats",
-        "PER : Constitution d'un complément retraite avec avantages fiscaux",
-        "Contrat de Capitalisation : Transmission optimisée hors succession",
-        "PEA / Compte Titres : Gestion directive ou conseillée sur les marchés actions et obligations",
+        "Épargne financière : Assurance-vie, Contrat de capitalisation, PEA assurance",
+        "Épargne immobilière : SCPI de rendement, SCPI via SCI à l'IS, SCPI de capitalisation",
+        "Épargne retraite : PERIN (Plan d'Épargne Retraite Individuel)",
+        "Épargne salariale : PEE, PERECO",
+        "Diversification : Fonds usufruit, FCPR et FPCI",
+        "Solutions fiscales : SCPI fiscales, Capital investissement (FIP et FCPI)"
       ],
-      cta: "Optimiser mes placements"
+      cta: "Optimiser mon épargne"
+    }
+  },
+  {
+    id: "immobilier",
+    title: "Investissements immobiliers",
+    Icon: Home,
+    items: [
+      "LMNP",
+      "LLI",
+      "Colocation",
+      "Jeanbrun",
+      "Denormandie",
+      "Malraux"
+    ],
+    content: {
+      subtitle: "Investissez dans la pierre pour créer des revenus complémentaires durables :",
+      points: [
+        "LMNP (Location Meublée Non Professionnelle) : Avec ou sans exploitant",
+        "LLI (Logement Locatif Intermédiaire) : Pour un investissement locatif intermédiaire",
+        "Colocation : Optimisez la rentabilité de vos biens",
+        "Nue-propriété : Profitez de la décote et constituez votre patrimoine",
+        "Denormandie : Défiscalisation dans l'ancien à rénover",
+        "Malraux / Monuments Historiques : Défiscalisation sur la restauration de bâtiments anciens"
+      ],
+      cta: "Démarrer un projet immobilier"
     }
   },
   {
     id: "financement",
     title: "Financement bancaire",
     Icon: Landmark,
-    items: ["Prêt Immobilier", "Crédit Lombard", "Rachat de Crédits", "Financement Professionnel"],
+    items: [
+      "Financement immobilier",
+      "Restructuration de crédit",
+      "Prêt viager hypothécaire"
+    ],
     content: {
-      subtitle: "Structurez votre financement dans les meilleures conditions du marché",
+      subtitle: "Structurez votre financement dans les meilleures conditions :",
       points: [
-        "Prêt Immobilier : Négociation de taux et montage optimal pour votre acquisition",
-        "Crédit Lombard : Financement sécurisé par votre portefeuille d'actifs",
-        "Rachat de Crédits : Regroupement de vos crédits pour améliorer votre trésorerie",
-        "Financement Professionnel : Solutions adaptées aux besoins de votre activité",
+        "Financement immobilier : Différé partiel ou total, jusqu'à 25 ans",
+        "Restructuration de crédit : Rachat de crédit, ajout de trésorerie, assurance emprunteur",
+        "Prêt viager hypothécaire : Profitez de la valeur de votre bien sans vendre"
       ],
       cta: "Simuler mon financement"
     }
   },
+  {
+    id: "prevoyance",
+    title: "Prévoyance",
+    Icon: Heart,
+    items: [
+      "Prévoyance individuelle",
+      "Prévoyance professionnelle"
+    ],
+    content: {
+      subtitle: "Protégez vous et vos proches avec des solutions de prévoyance adaptées :",
+      points: [
+        "Prévoyance individuelle : Garantie décès, invalidité, arrêt de travail",
+        "Prévoyance professionnelle : Protection de votre activité et de vos revenus"
+      ],
+      cta: "Configurer ma prévoyance"
+    }
+  },
+  {
+    id: "solutions-fiscales",
+    title: "Solutions fiscales",
+    Icon: Receipt,
+    items: [
+      "SCPI fiscales",
+      "Capital investissement",
+      "FIP et FCPI",
+      "Déficit foncier"
+    ],
+    content: {
+      subtitle: "Optimisez votre fiscalité avec des solutions légales :",
+      points: [
+        "SCPI fiscales : Investissement avec réduction d'impôt",
+        "Capital investissement : FIP et FCPI pour investir dans les PME",
+        "Déficit foncier : Déduction des travaux de rénovation de vos revenus"
+      ],
+      cta: "Optimiser ma fiscalité"
+    }
+  }
 ];
 ---
 
@@ -76,16 +118,17 @@ const categories = [
       <p class="text-sage/60 max-w-2xl mx-auto">Une approche globale et objective, sans exclusivité. Ensemble, nous choisissons les meilleures solutions du marché qui correspondent à vos objectifs et votre profil de risque.</p>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {categories.map((category) => {
         const Icon = category.Icon;
         return (
-          <button type="button" onclick={`document.getElementById('modal-${category.id}').showModal()`} class="bg-white p-8 rounded-xl shadow-sm border border-sage/5 hover:cursor-pointer hover:border-primary/30 transition-all hover:-translate-y-2 group text-left w-full">
-            <div class="w-14 h-14 bg-beige rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-              <Icon class="w-7 h-7 text-gold group-hover:text-white" />
+          <button type="button" onclick={`document.getElementById('modal-${category.id}').showModal()`} class="bg-white p-8 rounded-xl shadow-sm border border-sage/5 hover:cursor-pointer hover:border-primary/30 transition-all hover:-translate-y-2 group text-left w-full flex flex-col h-full">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-14 h-14 bg-beige rounded-lg flex items-center justify-center group-hover:bg-primary transition-colors flex-shrink-0">
+                <Icon class="w-7 h-7 text-gold group-hover:text-white" />
+              </div>
+              <h3 class="font-serif text-xl text-sage">{category.title}</h3>
             </div>
-            
-            <h3 class="font-serif text-xl text-sage mb-4">{category.title}</h3>
             
             <div class="flex flex-wrap gap-2 mb-6">
               {category.items.map((item) => (
@@ -95,7 +138,7 @@ const categories = [
               ))}
             </div>
             
-            <span class="text-primary font-bold text-sm flex items-center">
+            <span class="text-primary font-bold text-sm flex items-center mt-auto justify-end">
               En savoir plus
               <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m9 18 6-6-6-6" />
