@@ -1,0 +1,172 @@
+---
+import ReviewCard from './ui/ReviewCard.astro'
+
+const reviews = [
+  {
+    name: "Sophie Martin",
+    comment: "Cédric a été d'une aide précieuse pour structurer notre projet immobilier. Son expertise et sa disponibilité ont fait toute la différence. Je recommande fortement !"
+  },
+  {
+    name: "Philippe Dubois",
+    comment: "Un professionnel rigoureux et à l'écoute. Il a su trouver des solutions adaptées à ma situation pour optimiser ma fiscalité. Très satisfait de l'accompagnement."
+  },
+  {
+    name: "Marie Lefebvre",
+    comment: "Suite à notre rencontre, j'ai pu enfin comprendre mes options pour la retraite. Cédric prend le temps d'expliquer chaque étape. Un vrai partenariat dans la durée."
+  },
+  {
+    name: "Jean-Michel Bernard",
+    comment: "Excellente gestion de notre patrimoine familial. Conseils avisés, transparence et suivi régulier. Nous lui faisons confiance pour tous nos projets financiers."
+  },
+  {
+    name: "Catherine Roux",
+    comment: "Suite au décès de mon mari, j'étais perdue concernant la gestion de notre patrimoine. Cédric a fait preuve d'une grande empathie et m'a guidée avec professionnalisme."
+  },
+  {
+    name: "Nicolas Mercier",
+    comment: "Transparence totale sur les frais, conseils objectifs et personnalisés. Un accompagnement qui va au-delà de la simple gestion de placements."
+  },
+  {
+    name: "OlivierPetit",
+    comment: "Premier rendement après 6 mois d'accompagnement. Résultats conformes aux attentes. Un suivi rigoureux et des conseils pertinents."
+  },
+  {
+    name: "Isabelle Moreau",
+    comment: "Contact rapide et réponse à toutes mes questions. Accompagnement de qualité pour la transmission de notre patrimoine."
+  },
+  {
+    name: "Thierry Garnier",
+    comment: "Aide précieuse pour la création d'un contrat d'assurance vie. Expertise pointue et explications claires."
+  },
+  {
+    name: "Valérie Lambert",
+    comment: "Cédric a su nous accompagner dans l'achat de notre résidence principale avec un montage financier optimal."
+  },
+  {
+    name: "François Martin",
+    comment: "Portfolio diversifié et équilibré grâce à ses conseils. Suivi annuel rigoureux et propositions d'ajustement pertinentes."
+  },
+  {
+    name: "Sandrine Moreau",
+    comment: "Conseiller à l'écoute et disponible. Un accompagnement sur le long terme vraiment précieux pour notre famille."
+  }
+]
+
+const itemsPerPageMobile = 2
+const itemsPerPageTablet = 2
+const itemsPerPageDesktop = 3
+const totalReviews = reviews.length
+const totalPagesDesktop = Math.ceil(totalReviews / itemsPerPageDesktop)
+---
+
+<section id="reviews" class="py-24 scroll-mt-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h3 class="text-center font-serif text-2xl text-primary underline underline-offset-8 mb-4">Témoignages</h3>
+      <h2 class="font-serif text-4xl text-sage mb-4 flex justify-center">Ce que mes clients disent</h2>
+      <p class="text-sage/60 max-w-2xl mx-auto">La satisfaction de mes clients est ma plus belle récompense. Voici quelques retours d'expérience qui témoignent de la qualité de mon accompagnement.</p>
+    </div>
+
+    <div class="relative">
+      <div id="reviews-carousel" class="overflow-hidden">
+        <div class="flex transition-transform duration-500 ease-in-out" data-carousel>
+          {reviews.map((review, index) => (
+            <div 
+              class="review-item w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-2 md:px-3" 
+              data-index={index}
+            >
+              <ReviewCard name={review.name} comment={review.comment} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div class="flex justify-center items-center gap-4 mt-8">
+        <button
+          id="prev-btn"
+          class="p-3 rounded-full border border-sage/20 text-sage hover:bg-sage/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+          aria-label="Avis précédent"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <span id="carousel-indicator" class="text-sage/60 text-sm">
+          <span id="current-page">1</span> / <span id="total-pages">{totalPagesDesktop}</span>
+        </span>
+        <button
+          id="next-btn"
+          class="p-3 rounded-full border border-sage/20 text-sage hover:bg-sage/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+          aria-label="Avis suivant"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ totalReviews, itemsPerPageDesktop }}>
+  const carousel = document.querySelector('[data-carousel]');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const currentPageEl = document.getElementById('current-page');
+  const totalPagesEl = document.getElementById('total-pages');
+  
+  let currentPage = 1;
+
+  function getItemsPerPage() {
+    const width = window.innerWidth;
+    if (width < 768) return 1;
+    if (width < 1024) return 2;
+    return 3;
+  }
+
+  function getTotalPages() {
+    return Math.ceil(totalReviews / getItemsPerPage());
+  }
+
+  function updateCarousel() {
+    const itemsPerPage = getItemsPerPage();
+    const totalPages = getTotalPages();
+    
+    totalPagesEl.textContent = totalPages;
+    currentPageEl.textContent = currentPage;
+    
+    const itemWidth = 100 / itemsPerPage;
+    const offset = (currentPage - 1) * itemsPerPage;
+    carousel.style.transform = `translateX(-${offset * itemWidth}%)`;
+
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages;
+  }
+
+  prevBtn?.addEventListener('click', () => {
+    const totalPages = getTotalPages();
+    if (currentPage > 1) {
+      currentPage--;
+      updateCarousel();
+    }
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    const totalPages = getTotalPages();
+    if (currentPage < totalPages) {
+      currentPage++;
+      updateCarousel();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    const totalPages = getTotalPages();
+    if (currentPage > totalPages) {
+      currentPage = totalPages;
+    }
+    if (currentPage < 1) currentPage = 1;
+    updateCarousel();
+  });
+
+  updateCarousel();
+</script>

@@ -7,27 +7,29 @@ import { X } from "@lucide/astro"
     <div class="flex flex-col lg:flex-row items-center gap-20">
       
       <div class="lg:w-1/2 relative">
-        <div class="absolute -bottom-6 -left-6 w-full h-full bg-beige rounded-xl z-0"></div>
+        <div class="absolute -bottom-6 -left-6 w-full h-full bg-beige rounded-xl z-0 hidden lg:block"></div>
         <img 
           src="/portait_cedric.jpg" 
           alt="Portrait de Cédric Gal" 
-          class="relative z-10 rounded-xl shadow-xl w-full h-150 object-cover"
+          class="relative z-10 rounded-xl shadow-xl w-full h-80 md:h-80 lg:h-150 object-cover max-lg:aspect-[3/4]"
         />
       </div>
       
       <div class="lg:w-1/2">
+        
         <span class="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Conseiller en Gestion de Patrimoine</span>
         <h2 class="font-serif text-4xl text-sage mb-6">Bonjour, je suis Cédric Gal.</h2>
         <p class="text-sage/80 text-lg leading-relaxed mb-6">
-          Après plus de 10 ans dans la recherche et le développement de solutions pour l'ingénierie pétrolière, j'ai choisi de donner un nouveau sens à ma carrière : mettre mes compétences analytiques au service de celles et ceux qui souhaitent prendre des décisions financières éclairées.
+          "Après plus de 10 ans dans la recherche et le développement de solutions pour l'ingénierie pétrolière, j'ai choisi de donner un nouveau sens à ma carrière : mettre mes compétences analytiques au service de celles et ceux qui souhaitent prendre des décisions financières éclairées.
         </p>
         <p class="text-sage/80 text-lg leading-relaxed mb-6">
           Mon approche est ancrée dans la transparence et la pédagogie. Je tiens à ce que vous compreniez le "pourquoi" derrière chaque décision que nous prenons ensemble. Quel que soit vos projets et votre situation, je suis là pour être votre partenaire de confiance.
         </p>
 
         <p class="text-sage/80 text-lg leading-relaxed mb10">
-De par mon expérience personnelle, je suis convaincu que l’éducation financière devrait être accessible à tous, sans exception. En France, ce sujet reste trop souvent réservé à une minorité, alors qu’il est essentiel pour chacun — <span class="text-gold italic font-semibold">quel que soit son niveau de revenus ou son patrimoine</span>. Mon engagement ? Rendre l’accompagnement financier <span class="text-gold italic font-semibold">clair, adapté et ouvert à tous</span>, pour que chacun puisse prendre ses décisions en confiance.
+De par mon expérience personnelle, je suis convaincu que l’éducation financière devrait être accessible à tous, sans exception. En France, ce sujet reste trop souvent réservé à une minorité, alors qu’il est essentiel pour chacun — <span class="text-gold italic font-semibold">quel que soit son niveau de revenus ou son patrimoine</span>. Mon engagement ? Rendre l’accompagnement financier <span class="text-gold italic font-semibold">clair, adapté et ouvert à tous</span>, pour que chacun puisse prendre ses décisions en confiance."
         </p>
+        
         
         <div class="flex items-center space-x-4 mb-8">
           <div class="w-16 h-px bg-gold"></div>

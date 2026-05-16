@@ -10,5 +10,6 @@ export const SITE_DATA = {
     { href: "/mes-services", label: "Mes services" },
     { href: "/a-propos", label: "À propos" },
     { href: "/contact", label: "Contact" },
+    { href: "/#faq", label: "FAQ" },
   ],
 };

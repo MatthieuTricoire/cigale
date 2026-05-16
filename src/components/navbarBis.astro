@@ -20,17 +20,18 @@ import { Menu, X } from '@lucide/astro';
         </a>
       </div>
       
-      <div class="hidden md:flex items-center space-x-8">
+      <div class="hidden min-[1200px]:flex items-center space-x-6">
         <a href="/#services" class="nav-link text-sage hover:text-primary transition-colors font-medium" data-section="services">Mes services</a>
         <a href="/#methodology" class="nav-link text-sage hover:text-primary transition-colors font-medium" data-section="methodology">Ma méthode</a>
         <a href="/#prestations" class="nav-link text-sage hover:text-primary transition-colors font-medium" data-section="prestations">Mes solutions</a>
         <a href="/#about" class="nav-link text-sage hover:text-primary transition-colors font-medium" data-section="about">Qui suis-je ?</a>
+        <a href="/#faq" class="nav-link text-sage hover:text-primary transition-colors font-medium" data-section="faq">FAQ</a>
         <a href="/contact" class="bg-primary hover:bg-primary/90 text-background-dark font-bold py-2.5 px-6 rounded-lg transition-all shadow-lg shadow-primary/20">
           Prendre rendez-vous
         </a>
       </div>
       
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-sage hover:text-primary focus:outline-none transition-colors" aria-label="Menu">
+      <button id="mobile-menu-btn" class="min-[1200px]:hidden p-2 text-sage hover:text-primary focus:outline-none transition-colors" aria-label="Menu">
         <Menu id="menu-icon-open" class="w-6 h-6" />
         <X id="menu-icon-close" class="w-6 h-6 hidden" />
       </button>
@@ -39,7 +40,7 @@ import { Menu, X } from '@lucide/astro';
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white/95 backdrop-blur-md border-b border-sage/10 px-4 py-6 shadow-lg transition-all">
+  <div id="mobile-menu" class="hidden min-[1200px]:hidden absolute top-20 left-0 w-full bg-white/95 backdrop-blur-md border-b border-sage/10 px-4 py-6 shadow-lg transition-all">
     <div class="flex flex-col space-y-6">
       <a href="/#services" class="mobile-nav-link text-sage hover:text-primary font-medium text-lg">Services</a>
       <a href="/#methodology" class="mobile-nav-link text-sage hover:text-primary font-medium text-lg">Méthodologie</a>
@@ -55,7 +56,7 @@ import { Menu, X } from '@lucide/astro';
 <script>
   // Navigation active au scroll
   const navLinks = document.querySelectorAll('.nav-link');
-  const sections = ['services', 'prestations', 'methodology', 'about'];
+  const sections = ['services', 'prestations', 'methodology', 'about', 'faq'];
   
   function updateActiveNav() {
     const scrollPos = window.scrollY + 100;
