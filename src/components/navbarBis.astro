@@ -62,12 +62,26 @@ import { Menu, X } from '@lucide/astro';
     const scrollPos = window.scrollY + 100;
     
     for (const sectionId of sections) {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        const top = section.offsetTop;
-        const height = section.offsetHeight;
-        const isActive = scrollPos >= top && scrollPos < top + height;
-        
+      const element = document.getElementById(sectionId);
+      if (element) {
+        let section = element;
+        if (element.tagName !== 'SECTION') {
+          section = element.nextElementSibling;
+          while (section && section.tagName !== 'SECTION') {
+            section = section.nextElementSibling;
+          }
+        }
+        let top, height, isActive;
+        if (section) {
+          top = section.offsetTop;
+          height = section.offsetHeight;
+          isActive = scrollPos >= top - 150 && scrollPos < top + height - 150;
+        } else {
+          top = element.offsetTop;
+          height = element.offsetHeight;
+          isActive = scrollPos >= top - 150 && scrollPos < top + height - 150;
+        }
+
         navLinks.forEach(link => {
           if (link.dataset.section === sectionId) {
             if (isActive) {

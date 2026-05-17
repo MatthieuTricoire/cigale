@@ -3,37 +3,44 @@ import FaqItem from './ui/FaqItem.astro'
 
 const faqs = [
   {
+    question: "Pouvez-vous m'accompagner même si mon patrimoine n'est pas important ?",
+    answer: "Oui. La plupart des personnes que j'accompagne ne disposent pas d'un patrimoine conséquent au départ. Ce qui compte, ce n'est pas le montant, mais l'envie d'y voir plus clair et de se projeter dans l'avenir en ayant une stratégie patrimoniale adaptée. Des petites actions, mises en place tôt, peuvent avoir un impact très significatif sur le long terme."
+  },
+  {
     question: "Quel est le coût d'un accompagnement ?",
-    answer: "Je propose une première consultation gratuite de 30 minutes pour échanger sur vos besoins et présenter ma méthodologie. Ensuite, les honoraires sont adaptés à la complexité de votre projet et discutés ensemble lors d'un rendez-vous découverte."
+    answer: "Aucun. Pour le rendre accessible au plus grand nombre, l'accompagnement est totalement offert, je réalise autant de rendez-vous que vous en avez besoin. Je suis rémunéré par des rétrocommissions de mes partenaires lorsque des solutions sont mises en place. Ce fonctionnement est toujours expliqué clairement, en amont, pour que chaque décision soit prise en toute confiance. Vous n'avez donc pas de surcoût, mais un conseil et un accompagnement en plus."
   },
   {
-    question: "Êtes-vous indépendant ?",
-    answer: "Oui, je suis un conseiller en gestion de patrimoine indépendant (CGPI). Cette statut me permet de recommander les solutions les plus adaptées à votre situation, sans être lié à une banque ou une compagnie d'assurances spécifique."
+    question: "En quoi votre accompagnement est différent des autres acteurs du secteur ?",
+    answer: "Mon accompagnement se distingue par une vision globale et indépendante. Je suis votre copilote : ensemble, nous analysons, décidons et ajustons votre stratégie au fil du temps. Grâce à mes habilitations variées, je vous propose une approche sur mesure, cohérente et durable, parfaitement alignée avec votre réalité."
   },
   {
-    question: "Comment se déroule un accompagnement ?",
-    answer: [
-      "Découverte : analyse de votre situation actuelle et de vos objectifs",
-      "Diagnostic : évaluation de votre patrimoine et identification des axes d'amélioration",
-      "Recommandations : propositions personnalisées avec plan d'action détaillé",
-      "Suivi : accompagnement dans la mise en place et suivi régulier"
-    ]
+    question: "Comment savoir quoi faire quand on n'y connaît rien ?",
+    answer: "C'est l'essentiel de mon métier. Je suis là pour définir et vous expliquer de la manière la plus compréhensible pour vous la stratégie et les solutions qui vous correspondent afin que vous ayez toutes les cartes en main pour que vous preniez les bonnes décisions. Si une décision n'est pas claire pour vous, alors elle n'est pas encore la bonne. Mon objectif est que vous sachiez pourquoi vous agissez, pas simplement quoi faire."
   },
   {
-    question: "Quelle est votre zone géographique ?",
-    answer: "J'accompagne des clients dans toute la France, principalement dans les régions Nouvelle-Aquitaine et Occitanie. Les réunions peuvent se faire en présentiel ou en visioconférence."
+    question: "Comment les rendez-vous se déroulent ?",
+    answer: "Mon accompagnement nécessite plusieurs rendez-vous. Chaque rendez-vous d'1h peut se faire en physique, chez vous, à mon cabinet ou dans un endroit neutre, ou bien en visio. Pour voir s'il est pertinent d'avancer ensemble, un premier entretien d'1h est indispensable pour faire connaissance et comprendre votre situation et vos objectifs et de vie."
   },
   {
-    question: "Quelle est votre expérience ?",
-    answer: "Fort de plus de 15 ans d'expérience dans la gestion de patrimoine, j'ai accompagné des centaines de familles dans la réalisation de leurs projets financiers. Mon expertise couvre tous les aspects : placements, Fiscalité, succession, retraite."
+    question: "Peut-on arrêter l'accompagnement à tout moment ?",
+    answer: "Oui, bien sûr. Mon accompagnement est sans engagement et offert, avec pour seul objectif de vous éclairer dès le départ. Si, pour une raison quelconque, vous souhaitez l'interrompre, il n'y a aucune contrainte. Je resterai à votre disposition pour le reprendre dès que vous le souhaiterez."
+  },
+  {
+    question: "Vendez-vous des produits financiers spécifiques ?",
+    answer: "Non. Je ne pars jamais d'un produit à placer, mais toujours de votre situation et de vos objectifs. Les solutions proposées émergent ensuite, uniquement si elles s'intègrent parfaitement à votre trajectoire. L'objectif ? Que chaque décision soit comprise, assumée, et jamais subie."
   }
 ]
 ---
 
-<section id="faq" class="py-24 scroll-mt-20 bg-gray-50">
+<section id="faq" class="py-24 scroll-mt-20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
-      <h3 class="text-center font-serif text-2xl text-primary underline underline-offset-8 mb-4">Foire aux questions</h3>
+      <h3  class="flex items-center justify-center gap-4 font-serif text-2xl text-primary  mb-4 scroll-mt-24">
+        <span class="block flex-1 h-px bg-sage/60"></span>
+        Foire aux questions
+        <span class="block flex-1 h-px bg-sage/60"></span>
+</h3>
       <h2 class="font-serif text-4xl text-sage mb-4 flex justify-center">Des réponses à vos interrogations</h2>
       <p class="text-sage/60 max-w-2xl mx-auto">Vous avez des questions ? Vous trouverez ci-dessous les réponses aux interrogations les plus fréquentes. N'hésitez pas à me contacter pour toute question complémentaire.</p>
     </div>

@@ -17,12 +17,11 @@ const categories = [
     content: {
       subtitle: "Optimisez votre épargne avec des solutions adaptées à vos objectifs :",
       points: [
-        "Épargne financière : Assurance-vie, Contrat de capitalisation, PEA assurance",
+        "Épargne financière : Assurance-vie, Contrat de capitalisation, PEA",
         "Épargne immobilière : SCPI de rendement, SCPI via SCI à l'IS, SCPI de capitalisation",
-        "Épargne retraite : PERIN (Plan d'Épargne Retraite Individuel)",
-        "Épargne salariale : PEE, PERECO",
+        "Épargne retraite : PERIN",
+        "Épargne salariale : PEE, PERECOI",
         "Diversification : Fonds usufruit, FCPR et FPCI",
-        "Solutions fiscales : SCPI fiscales, Capital investissement (FIP et FCPI)"
       ],
       cta: "Optimiser mon épargne"
     }
@@ -32,22 +31,18 @@ const categories = [
     title: "Investissements immobiliers",
     Icon: Home,
     items: [
+      "Nue-propriété",
+      "Locatif individuel","Locatif en colocation",
       "LMNP",
-      "LLI",
-      "Colocation",
-      "Jeanbrun",
-      "Denormandie",
-      "Malraux"
+    "Dispositifs fiscaux"
     ],
     content: {
-      subtitle: "Investissez dans la pierre pour créer des revenus complémentaires durables :",
+      subtitle: "Investissez dans la pierre pour créer des revenus complémentaires réguliers et durables :",
       points: [
-        "LMNP (Location Meublée Non Professionnelle) : Avec ou sans exploitant",
-        "LLI (Logement Locatif Intermédiaire) : Pour un investissement locatif intermédiaire",
-        "Colocation : Optimisez la rentabilité de vos biens",
-        "Nue-propriété : Profitez de la décote et constituez votre patrimoine",
-        "Denormandie : Défiscalisation dans l'ancien à rénover",
-        "Malraux / Monuments Historiques : Défiscalisation sur la restauration de bâtiments anciens"
+      "Nue-propriété",
+      "Locatif individuel ou en colocation",
+      "Avec statut fiscal LMNP",
+      "Avec dispositifs fiscaux : Jeanbrun, Déficit Foncier, Denormandie, Malraux, Monuments Historiques"
       ],
       cta: "Démarrer un projet immobilier"
     }
@@ -95,14 +90,36 @@ const categories = [
     items: [
       "Financiers",
       "Immobiliers",
-      "Immoliliers / Financiers",
+      "Immobiliers / Financiers",
     ],
     content: {
-      subtitle: "Optimisez votre fiscalité avec des intruments adéquats  :",
-      points: [
-        "PERIN : Plan d'Épargne Retraire Individuelle",
-        "Capitqal investissement (FIP et FCPI)",
-        "Déficit foncier : Déduction des travaux de rénovation de vos revenus"
+      subtitle: "Structurez votre fiscalité à l'aide de mécanismes adaptés à votre situation :",
+      points: [],
+      sections: [
+        {
+          title: "Financier",
+          points: [
+            "PERIN",
+            "Capital investissement (FIP et FCPI)"
+          ]
+        },
+        {
+          title: "Immobilier",
+          points: [
+            "Dispositif Jeanbrun",
+            "Dispositif LLI (Logement Locatif Intermédiaire)",
+            "Dispositif Déficit foncier",
+            "Dispositif Denormandie",
+            "Dispositif Malraux",
+            "Dispositif Monuments Historiques"
+          ]
+        },
+        {
+          title: "Immobilier / Financier",
+          points: [
+            "SCPI fiscales : Déficit foncier, Denormandie, Malraux"
+          ]
+        }
       ],
       cta: "Optimiser ma fiscalité"
     }
@@ -113,7 +130,11 @@ const categories = [
 <section id="prestations" class="py-24 scroll-mt-20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
-      <h3 id="methodology" class="text-center font-serif text-2xl text-primary underline underline-offset-8 mb-4">Mes solutions</h3>
+      <h3 id="methodology" class="flex items-center justify-center gap-4 font-serif text-2xl text-primary  mb-4 scroll-mt-24">
+        <span class="block flex-1 h-px bg-sage/60"></span>
+        Mes solutions
+        <span class="block flex-1 h-px bg-sage/60"></span>
+</h3>
 <h2 class="font-serif text-4xl text-sage mb-4 text-balance">Un panel de <span class="text-gold italic">solutions</span> pour mettre en place la <span class="text-gold italic">stratégie</span> qui vous correspond</h2>
       <p class="text-sage/60 max-w-2xl mx-auto">Comme un jardinier choisissant avec soin les graines les plus adaptées à son sol, je sélectionne pour vous, de manière objective et sans exclusivité, les solutions les plus pertinentes du marché. En harmonie avec vos objectifs et votre appétence pour le risque, elles permettront à votre patrimoine de s’épanouir durablement.</p>
     </div>
@@ -162,14 +183,32 @@ const categories = [
       </div>
       <div class="p-8 overflow-y-auto max-h-[calc(90vh-100px)]">
         <p class="text-sage/80 text-lg mb-6">{category.content.subtitle}</p>
-        <ul class="space-y-4">
-          {category.content.points.map((point) => (
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></span>
-              <span class="text-sage/70">{point}</span>
-            </li>
-          ))}
-        </ul>
+        {category.content.sections ? (
+          <div class="space-y-6">
+            {category.content.sections.map((section) => (
+              <div>
+                <h4 class="font-bold text-sage text-lg mb-3">{section.title}</h4>
+                <ul class="space-y-2">
+                  {section.points.map((point) => (
+                    <li class="flex items-start gap-3">
+                      <span class="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></span>
+                      <span class="text-sage/70">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <ul class="space-y-4">
+            {category.content.points.map((point) => (
+              <li class="flex items-start gap-3">
+                <span class="w-2 h-2 bg-gold rounded-full mt-2 flex-shrink-0"></span>
+                <span class="text-sage/70">{point}</span>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   </dialog>

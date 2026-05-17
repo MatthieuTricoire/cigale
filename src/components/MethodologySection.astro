@@ -19,8 +19,13 @@ const steps = [
 ---
 
 
-      <h3 id="methodology" class="text-center font-serif text-2xl text-primary underline underline-offset-8 mb-4">Ma méthode</h3>
-<section  class="py-24 bg-sage text-white scroll-mt-20">
+      <!-- <h3 id="methodology" class="text-center font-serif text-2xl text-primary underline underline-offset-8 mb-4 scroll-mt-24">Ma méthode</h3> -->
+      <h3 id="methodology" class="flex items-center justify-center gap-4 font-serif text-2xl text-primary  mb-4 scroll-mt-24">
+  <span class="block flex-1 h-px bg-sage/60"></span>
+  Ma méthode
+  <span class="block flex-1 h-px bg-sage/60"></span>
+</h3>
+<section class="py-24 bg-sage text-white scroll-mt-20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
 <h2 class="font-serif text-4xl mb-4">La <span class="text-gold italic">clarté</span>, <span class="text-gold italic">la transparence</span> et le <span class="text-gold italic">sur-mesure</span> au service de <span class="text-gold italic">vos intérêts</span></h2>
@@ -28,29 +33,23 @@ const steps = [
     </div>
     
 <div class="relative">
-      <!-- Fil rouge: Mobile uniquement - ligne verticale -->
-      <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-primary to-transparent opacity-60 md:hidden"></div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         {steps.map((step) => (
-          <div class="bg-white/5 p-8 rounded-xl border border-white/10 backdrop-blur-sm text-center relative">
-            <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-primary flex items-center justify-center font-bold text-background-dark text-2xl">
+          <div class="bg-white/5 p-6 md:p-8 rounded-xl border border-white/10 backdrop-blur-sm text-center">
+            <div class="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 md:mb-6 rounded-full bg-primary flex items-center justify-center font-bold text-background-dark text-xl md:text-2xl">
               {step.number}
             </div>
-            <h4 class="font-bold text-xl mb-4 h-14 flex items-center justify-center">{step.title}</h4>
+            <h4 class="font-bold text-lg md:text-xl mb-3 md:mb-4 h-14 flex items-center justify-center">{step.title}</h4>
             <p class="text-slate-300 text-sm leading-relaxed">{step.description}</p>
-            
-            <!-- Point de suivi sur mobile -->
-            <div class="absolute left-0 top-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary md:hidden"></div>
           </div>
         ))}
       </div>
       
       <!-- Conseil & accompagnement offerts - sous les 3 étapes -->
-      <div class="mt-12 max-w-3xl mx-auto relative">
+      <div class="mt-12 w-full mx-auto relative">
         <div class="bg-white/10 border border-primary/30 rounded-xl p-6 text-center relative z-10">
-          <h4 class="font-bold text-lg text-white mb-2">Conseil & accompagnement offerts</h4>
-          <p class="text-slate-300 text-sm leading-relaxed text-justify">Je vous accompagne tout au long de notre collaboration pour vous conseiller, mettre en place ou adapter les solutions déjà mises en place. À chaque étape, libre à vous d'arrêter ou de continuer l'accompagnement. L'accompagnement est totalement offert, je suis rémunéré par des rétrocommissions de mes partenaires, vous n'avez donc pas de surcoût, mais un conseil et un accompagnement en plus.</p>
+          <h4 class="font-bold text-lg text-white mb-2 md:text-xl">Conseil & accompagnement offerts</h4>
+          <p class="text-slate-300 text-sm leading-relaxed text-center">Je vous accompagne tout au long de notre collaboration pour vous conseiller, mettre en place ou adapter les solutions déjà mises en place. À chaque étape, libre à vous d'arrêter ou de continuer l'accompagnement. L'accompagnement est totalement offert, je suis rémunéré par des rétrocommissions de mes partenaires, vous n'avez donc pas de surcoût, mais un conseil et un accompagnement en plus.</p>
         </div>
       </div>
     </div>
