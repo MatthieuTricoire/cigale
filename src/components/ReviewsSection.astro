@@ -1,42 +1,55 @@
 ---
 import ReviewCard from './ui/ReviewCard.astro'
 
-const reviews = [
+const reviewsUnsorted = [
   {
     name: "Sophie Martin",
     comment: "Cédric a été d'une aide précieuse pour structurer notre projet immobilier. Son expertise et sa disponibilité ont fait toute la différence. Je recommande fortement !"
   },
   {
-    name: "Philippe Dubois",
-    comment: "Un professionnel rigoureux et à l'écoute. Il a su trouver des solutions adaptées à ma situation pour optimiser ma fiscalité. Très satisfait de l'accompagnement."
+    name: "Béatrice C",
+    comment: "Cédric est un conseiller en patrimoine très disponible, très à l'écoute. Il explique très clairement les différentes possibilités d'investissement, ce qui me permet de choisir en toute connaissance de cause. Il conseille sans influencer. On se sent à l'aise. Il fait preuve de beaucoup de patience et de compétences. C'est un professionnel très investi qui propose un accompagnement sur mesure.",
+    date:"02/04/2026"
   },
   {
-    name: "Marie Lefebvre",
-    comment: "Suite à notre rencontre, j'ai pu enfin comprendre mes options pour la retraite. Cédric prend le temps d'expliquer chaque étape. Un vrai partenariat dans la durée."
+    name: "Jean-Claude L",
+    date: "06/03/2026",
+    age: 63,
+    comment: "Très précis dans ces explications et à l'écoute."
   },
   {
-    name: "Jean-Michel Bernard",
-    comment: "Excellente gestion de notre patrimoine familial. Conseils avisés, transparence et suivi régulier. Nous lui faisons confiance pour tous nos projets financiers."
+    name: "Mathieu N",
+    date:"08/12/2025",
+    age: 39,
+    comment: "Je connais Cédric depuis longtemps et son approche rigoureuse et pédagogique est très adaptée. Les stratégies mises en place se sont traduites rapidement par des résultats concrets, conformes aux objectifs annoncés. Je recommande son accompagnement à toute personne recherchant efficacité et transparence."
   },
   {
-    name: "Catherine Roux",
-    comment: "Suite au décès de mon mari, j'étais perdue concernant la gestion de notre patrimoine. Cédric a fait preuve d'une grande empathie et m'a guidée avec professionnalisme."
+    name: "Thierry R",
+    date: "03/09/2026",
+    age: 66,
+    comment: "Très sympathique, à l'écoute, explication claire et de très bon conseil."
   },
   {
-    name: "Nicolas Mercier",
-    comment: "Transparence totale sur les frais, conseils objectifs et personnalisés. Un accompagnement qui va au-delà de la simple gestion de placements."
+    name: "Sylvie G",
+    date: "07/01/2025",
+    age: 63,
+    comment: "Dans le cadre de la gestion de mon patrimoine et mon manque d'informations sur ce sujet, Cédric a su m'expliquer avec des phrases simples les différentes possibilités qui s'offraient à moi dans ma situation et sans chercher à me pousser à souscrire. J'ai suivi ces conseils sur la mise en place des solutions en toute confiance. Merci pour sa patience, son écoute, sa clarté et sa gentillesse."
   },
   {
     name: "Olivier Petit",
     comment: "Premier rendement après 6 mois d'accompagnement. Résultats conformes aux attentes. Un suivi rigoureux et des conseils pertinents."
   },
   {
-    name: "Isabelle Moreau",
-    comment: "Contact rapide et réponse à toutes mes questions. Accompagnement de qualité pour la transmission de notre patrimoine."
+    name: "Laetitia G",
+    age: 35,
+    date: "07/01/2025",
+    comment: "Excellent conseiller, toujours disponible et à l'écoute. Ses conseils sont clairs et adaptés à ma situation et mes envies. Je me sens vraiment en confiance. Merci pour votre accompagnement et votre efficacité !"
   },
   {
-    name: "Thierry Garnier",
-    comment: "Aide précieuse pour la création d'un contrat d'assurance vie. Expertise pointue et explications claires."
+    name: "Anthony R",
+    date: "27/11/2024",
+    age: 28,
+    comment: "Grâce à mon conseiller en patrimoine, je mets plus d'argent de côté et je fais attention à mes dépenses. Cédric est disponible, attentif et à l'écoute."
   },
   {
     name: "Valérie Lambert",
@@ -50,11 +63,19 @@ const reviews = [
     name: "Sandrine Moreau",
     comment: "Conseiller à l'écoute et disponible. Un accompagnement sur le long terme vraiment précieux pour notre famille."
   },
-  {
-    name: "Jean-Claude L",
-    comment: "Très précis dans ces explanations et à l'écoute."
-  }
 ]
+
+function parseDate(dateStr: string): Date {
+  const [day, month, year] = dateStr.split('/').map(Number)
+  return new Date(year, month - 1, day)
+}
+
+const reviews = [...reviewsUnsorted].sort((a, b) => {
+  if (a.date && b.date) return parseDate(b.date).getTime() - parseDate(a.date).getTime()
+  if (a.date) return -1
+  if (b.date) return 1
+  return 0
+})
 
 function chunkArray<T>(array: T[], size: number): T[][] {
   const result: T[][] = []
@@ -70,12 +91,12 @@ const reviewGroupsDesktop = chunkArray(reviews, 3)
 const totalPagesDesktop = reviewGroupsDesktop.length
 ---
 
-<section id="reviews" class="py-24 scroll-mt-20 bg-white">
+<section id="reviews" class="py-24 scroll-mt-2 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h3 class="text-center font-serif text-2xl text-primary underline underline-offset-8 mb-4">Témoignages</h3>
       <h2 class="font-serif text-4xl text-sage mb-4 flex justify-center">Ce que mes clients disent</h2>
-      <p class="text-sage/60 max-w-2xl mx-auto">La satisfaction de mes clients est ma plus belle récompense. Voici quelques retours d'expérience qui témoignent de la qualité de mon accompagnement.</p>
+      <p class="text-sage/60 max-w-2xl mx-auto">La satisfaction de mes clients est ma plus belle récompense. Voici quelques retours de mes accompagnements.</p>
     </div>
 
     <div class="relative">
@@ -83,9 +104,9 @@ const totalPagesDesktop = reviewGroupsDesktop.length
         <div class="flex transition-transform duration-500 ease-in-out" data-carousel>
           {reviewGroupsDesktop.map((group, groupIndex) => (
             <div class="w-full flex-shrink-0 px-2 md:px-3" data-group-index={groupIndex}>
-              <div class="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 [&>*:nth-child(3)]:hidden md:[&>*:nth-child(3)]:block">
+              <div class="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6">
                 {group.map((review) => (
-                  <ReviewCard name={review.name} comment={review.comment} />
+                  <ReviewCard name={review.name} comment={review.comment} age={review.age} date={review.date} />
                 ))}
               </div>
             </div>
@@ -178,4 +199,16 @@ const totalPagesDesktop = reviewGroupsDesktop.length
   });
 
   updateCarousel();
+
+  const expandButtons = document.querySelectorAll('[data-expand-btn]')
+  expandButtons.forEach((btn) => {
+    const text = btn.previousElementSibling
+    if (text && text.scrollHeight > text.clientHeight) {
+      btn.classList.remove('hidden')
+      btn.addEventListener('click', () => {
+        const isExpanded = text.classList.toggle('line-clamp-4')
+        btn.textContent = isExpanded ? 'Lire la suite' : 'Réduire'
+      })
+    }
+  })
 </script>

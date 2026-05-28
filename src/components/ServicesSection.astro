@@ -2,21 +2,10 @@
 import { Icon } from 'astro-icon/components'
 
 const services = [
-  {
-    title: "Préparer sa retraite",
-    description: "Construire un complément de revenu fiable pour vivre sans dépendre des aléas du système.",
-    // Code SVG de l'icône TreePine
-    iconPaths: `<path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.8 1.7H17Z" /><path d="M12 22v-3" />`
-  },
-  {
-    title: "Réduire ses impôts",
-    description: "Optimiser sa fiscalité légalement, avec des stratégies adaptées à votre profil.",
-    iconName: "hugeicons:chart-decrease"
-  },
-  {
-    title: "Financer les études",
-    description: "Anticiper les dépenses pour offrir à vos enfants toutes les chances de réussir.",
-    iconName: "ph:student"
+    {
+    title: "Réorganiser son patrimoine",
+    description: "Réadapter l'organisation, la stratégie et les solutions mises en place.",
+    iconName: "ph:shuffle"
   },
   {
     title: "Valoriser son épargne",
@@ -24,20 +13,25 @@ const services = [
     iconName: "ph:piggy-bank"
   },
   {
-    title: "Protéger sa famille",
-    description: "Sécuriser l'avenir de vos proches face aux imprévus de la vie.",
-    iconName: "ph:umbrella-simple"
-  },
-  {
     title: "Investir dans l'immobilier",
     description: "Construire un patrimoine solide avec les bonnes stratégies d'acquisition.",
     iconName: "hugeicons:home-12"
-  }
-,
+  },
   {
-    title: "Financer un grand projet",
-    description: "Planifier sereinement un voyage, une résidence secondaire ou un projet personnel.",
-    iconName: "hugeicons:tree-palm"
+    title: "Préparer sa retraite",
+    description: "Construire un complément de revenu fiable pour vivre sans dépendre des aléas du système.",
+    // Code SVG de l'icône TreePine
+    iconPaths: `<path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.8 1.7H17Z" /><path d="M12 22v-3" />`
+  },
+  {
+    title: "Financer les études",
+    description: "Anticiper les dépenses pour offrir à vos enfants toutes les chances de réussir.",
+    iconName: "ph:student"
+  },
+  {
+    title: "Protéger sa famille",
+    description: "Sécuriser l'avenir de vos proches face aux imprévus de la vie.",
+    iconName: "ph:umbrella-simple"
   },
   {
     title: "Transmettre son patrimoine",
@@ -45,14 +39,19 @@ const services = [
     iconName: "healthicons:child-care-outline"
   },
   {
-    title: "Réorganiser son patrimoine",
-    description: "Réadapter l'organisation, la stratégie et les solutions mises en place.",
-    iconName: "ph:shuffle"
-  }
+    title: "Réduire ses impôts",
+    description: "Optimiser sa fiscalité légalement pour augmenter son patrimoine.",
+    iconName: "hugeicons:chart-decrease"
+  },
+  {
+    title: "Financer un grand projet",
+    description: "Planifier sereinement un voyage, une résidence secondaire ou un projet personnel.",
+    iconName: "hugeicons:tree-palm"
+  },
 ];
 ---
 
-<section id="services" class="py-24 scroll-mt-20">
+<section id="services" class="py-24 scroll-mt-2">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h3 class="flex items-center justify-center gap-4 font-serif text-2xl text-primary  mb-4">
