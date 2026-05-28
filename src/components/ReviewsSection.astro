@@ -3,65 +3,55 @@ import ReviewCard from './ui/ReviewCard.astro'
 
 const reviewsUnsorted = [
   {
-    name: "Sophie Martin",
-    comment: "Cédric a été d'une aide précieuse pour structurer notre projet immobilier. Son expertise et sa disponibilité ont fait toute la différence. Je recommande fortement !"
-  },
-  {
-    name: "Béatrice C",
+    firstname1: "Béatrice",
+    lastname: "C",
     comment: "Cédric est un conseiller en patrimoine très disponible, très à l'écoute. Il explique très clairement les différentes possibilités d'investissement, ce qui me permet de choisir en toute connaissance de cause. Il conseille sans influencer. On se sent à l'aise. Il fait preuve de beaucoup de patience et de compétences. C'est un professionnel très investi qui propose un accompagnement sur mesure.",
-    date:"02/04/2026"
+    date:"02/04/2026",
+    age:62,
   },
   {
-    name: "Jean-Claude L",
+    firstname1: "Jean-Claude",
+    firstname2: "Véronique",
+    lastname: "L",
     date: "06/03/2026",
     age: 63,
+    age2: 59,
     comment: "Très précis dans ces explications et à l'écoute."
   },
   {
-    name: "Mathieu N",
+    firstname1: "Mathieu",
+    lastname: "N",
     date:"08/12/2025",
     age: 39,
     comment: "Je connais Cédric depuis longtemps et son approche rigoureuse et pédagogique est très adaptée. Les stratégies mises en place se sont traduites rapidement par des résultats concrets, conformes aux objectifs annoncés. Je recommande son accompagnement à toute personne recherchant efficacité et transparence."
   },
   {
-    name: "Thierry R",
-    date: "03/09/2026",
+    firstname1: "Thierry",
+    lastname: "R",
+    date: "03/09/2025",
     age: 66,
     comment: "Très sympathique, à l'écoute, explication claire et de très bon conseil."
   },
   {
-    name: "Sylvie G",
+    firstname1: "Sylvie",
+    lastname: "G",
     date: "07/01/2025",
     age: 63,
     comment: "Dans le cadre de la gestion de mon patrimoine et mon manque d'informations sur ce sujet, Cédric a su m'expliquer avec des phrases simples les différentes possibilités qui s'offraient à moi dans ma situation et sans chercher à me pousser à souscrire. J'ai suivi ces conseils sur la mise en place des solutions en toute confiance. Merci pour sa patience, son écoute, sa clarté et sa gentillesse."
   },
   {
-    name: "Olivier Petit",
-    comment: "Premier rendement après 6 mois d'accompagnement. Résultats conformes aux attentes. Un suivi rigoureux et des conseils pertinents."
-  },
-  {
-    name: "Laetitia G",
+    firstname1: "Laetitia",
+    lastname: "G",
     age: 35,
     date: "07/01/2025",
     comment: "Excellent conseiller, toujours disponible et à l'écoute. Ses conseils sont clairs et adaptés à ma situation et mes envies. Je me sens vraiment en confiance. Merci pour votre accompagnement et votre efficacité !"
   },
   {
-    name: "Anthony R",
+    firstname1: "Anthony",
+    lastname: "R",
     date: "27/11/2024",
     age: 28,
     comment: "Grâce à mon conseiller en patrimoine, je mets plus d'argent de côté et je fais attention à mes dépenses. Cédric est disponible, attentif et à l'écoute."
-  },
-  {
-    name: "Valérie Lambert",
-    comment: "Cédric a su nous accompagner dans l'achat de notre résidence principale avec un montage financier optimal."
-  },
-  {
-    name: "François Martin",
-    comment: "Portfolio diversifié et équilibré grâce à ses conseils. Suivi annuel rigoureux et propositions d'ajustement pertinentes."
-  },
-  {
-    name: "Sandrine Moreau",
-    comment: "Conseiller à l'écoute et disponible. Un accompagnement sur le long terme vraiment précieux pour notre famille."
   },
 ]
 
@@ -106,7 +96,7 @@ const totalPagesDesktop = reviewGroupsDesktop.length
             <div class="w-full flex-shrink-0 px-2 md:px-3" data-group-index={groupIndex}>
               <div class="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6">
                 {group.map((review) => (
-                  <ReviewCard name={review.name} comment={review.comment} age={review.age} date={review.date} />
+                  <ReviewCard firstname1={review.firstname1} firstname2={review.firstname2} lastname={review.lastname} comment={review.comment} age={review.age} age2={review.age2} date={review.date} />
                 ))}
               </div>
             </div>

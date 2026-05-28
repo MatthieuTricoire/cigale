@@ -25,13 +25,13 @@ const { question, answer } = Astro.props
       <path d="m6 9 6 6 6-6" />
     </svg>
   </summary>
-  <div class="p-4 pt-0 text-gray-600">
+  <div class="p-4 pt-0 text-gray-600 text-justify">
     {Array.isArray(answer) ? (
       <ul class="list-disc list-inside space-y-1">
         {answer.map((item) => <li>{item}</li>)}
       </ul>
     ) : (
-      <p>{answer}</p>
+      <p >{answer}</p>
     )}
   </div>
 </details>

@@ -1,16 +1,28 @@
 ---
 interface Props {
-  name: string
+  firstname1: string
+  firstname2?: string
+  lastname: string
   comment: string
   age?: number
+  age2?: number
   date?: string
 }
 
-const { name, comment, age, date } = Astro.props
-const nameParts = name.split(' ')
-const firstName = nameParts[0] || ''
-const lastNameInitial = nameParts.length > 1 ? nameParts[nameParts.length - 1].charAt(0).toUpperCase() : ''
-const displayName = `${firstName} ${lastNameInitial}.`
+const { firstname1, firstname2, lastname, comment, age, age2, date } = Astro.props
+const isCouple = !!firstname2
+
+let displayName: string
+let avatarInitials: string
+if (isCouple) {
+  const lastInitial = lastname.charAt(0).toUpperCase()
+  displayName = `${firstname1} & ${firstname2} ${lastInitial}.`
+  avatarInitials = `${firstname1.charAt(0)}${firstname2!.charAt(0)}`
+} else {
+  const lastInitial = lastname.charAt(0).toUpperCase()
+  displayName = `${firstname1} ${lastInitial}.`
+  avatarInitials = firstname1.charAt(0)
+}
 ---
 
 <div class="bg-white rounded-xl p-6 shadow-sm border border-sage/10 hover:shadow-md transition-shadow flex flex-col h-full justify-between">
@@ -22,17 +34,17 @@ const displayName = `${firstName} ${lastNameInitial}.`
         </svg>
       ))}
     </div>
-    <p data-expandable class="text-sage/80 leading-relaxed line-clamp-4">&ldquo;{comment}&rdquo;</p>
+    <p data-expandable class="text-sage/80 leading-relaxed line-clamp-4 text-justify">&ldquo;{comment}&rdquo;</p>
     <button data-expand-btn class="text-primary text-sm font-medium hover:underline mt-2 hidden self-end">Lire la suite</button>
   </div>
   <div class="flex items-center gap-3 pt-4">
     <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-      <span class="text-primary font-semibold">{firstName.charAt(0)}</span>
+      <span class="text-primary font-semibold text-sm">{avatarInitials}</span>
     </div>
     <div>
       <p class="font-medium text-sage">{displayName}</p>
       <p class="text-xs text-sage/50">
-        {age && `${age} ans`}
+        {isCouple && age && age2 ? `${age} & ${age2} ans` : age ? `${age} ans` : ''}
         {age && date && " · "}
         {date && date}
       </p>
