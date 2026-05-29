@@ -75,8 +75,6 @@ function chunkArray<T>(array: T[], size: number): T[][] {
   return result
 }
 
-const reviewGroupsMobile = chunkArray(reviews, 2)
-const reviewGroupsTablet = chunkArray(reviews, 2)
 const reviewGroupsDesktop = chunkArray(reviews, 3)
 const totalPagesDesktop = reviewGroupsDesktop.length
 ---
