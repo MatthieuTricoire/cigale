@@ -23,7 +23,7 @@ import { Menu, X } from '@lucide/astro';
       <div class="hidden min-[1200px]:flex items-center space-x-6">
         <a href="/#services" class="nav-link text-sage hover:text-primary transition-colors font-medium" data-section="services">Mes services</a>
         <a href="/#methodologie" class="nav-link text-sage hover:text-primary transition-colors font-medium" data-section="methodologie">Ma méthode</a>
-        <a href="/#solutions" class="nav-link text-sage hover:text-primary transition-colors font-medium" data-section="prestations">Mes solutions</a>
+        <a href="/#solutions" class="nav-link text-sage hover:text-primary transition-colors font-medium" data-section="solutions">Mes solutions</a>
         <a href="/#qui-suis-je" class="nav-link text-sage hover:text-primary transition-colors font-medium" data-section="qui-suis-je">Qui suis-je ?</a>
         <a href="/#faq" class="nav-link text-sage hover:text-primary transition-colors font-medium" data-section="faq">FAQ</a>
         <a href="/contact" class="bg-primary hover:bg-primary/90 text-background-dark font-bold py-2.5 px-6 rounded-lg transition-all shadow-lg shadow-primary/20">
@@ -56,7 +56,7 @@ import { Menu, X } from '@lucide/astro';
 <script>
   // Navigation active au scroll
   const navLinks = document.querySelectorAll('.nav-link');
-  const sections = ['services', 'services', 'methodologie', 'qui-suis-je', 'faq'];
+  const sections = ['services', 'methodologie', 'solutions', 'qui-suis-je', 'faq'];
   
   function updateActiveNav() {
     const scrollPos = window.scrollY + 100;
