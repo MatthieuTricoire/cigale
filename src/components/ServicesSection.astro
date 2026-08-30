@@ -67,7 +67,7 @@ const services = [
       {services.map((service) => (
         <div class="bg-white p-8 rounded-xl shadow-sm border border-sage/5">
           
-          <div class="w-14 h-14 bg-beige rounded-lg flex items-center justify-center mb-6">
+          <div class="flex items-center gap-4 mb-6 " ><div class="w-14 h-14 bg-beige rounded-lg flex items-center justify-center">
             {service.iconName ? (
               <Icon name={service.iconName} class="text-gold w-7 h-7" />
             ) : (
@@ -83,9 +83,10 @@ const services = [
                 set:html={service.iconPaths}
               />
             )}
-          </div>
+        </div>
+          <h3 class="font-serif text-xl text-sage">{service.title}</h3>
+        </div>
           
-          <h3 class="font-serif text-xl text-sage mb-3">{service.title}</h3>
           <p class="text-sage/70 text-sm leading-relaxed">{service.description}</p>
           
         </div>
